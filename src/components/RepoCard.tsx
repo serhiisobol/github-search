@@ -27,10 +27,11 @@ export function RepoCard({ repo }: { repo: IRepo }) {
 			<a href={repo.html_url} target='blank'>
 				<h2 className='text-lg font-bold mb-1'>{repo.full_name}</h2>
 				<p className='text-sm mb-1'>
+					Language: <span className='font-bold mr-2'>{repo.language}</span>
 					Forks: <span className='font-bold mr-2'>{repo.forks}</span>
 					Watchers: <span className='font-bold'>{repo.watchers}</span>
 				</p>
-				<p className='text-sm font-thin mb-1'>{repo.description}</p>
+				<p className='text-sm font-thin mb-4'>{repo.description}</p>
 				{isFavorite ? (
 					<button
 						className='text-white px-4 py-1 bg-gradient-to-r from-sky-700 via-sky-800 to-sky-900 rounded-full hover:shadow-md transition-all '

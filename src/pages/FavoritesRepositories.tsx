@@ -11,16 +11,22 @@ export function FavoritesRepositories() {
 		);
 
 	return (
-		<div className='flex justify-center pt-10 mx-auto h-screen w-screen bg-slate-200'>
-			<ul className='list-none'>
-				{favorites.map(f => (
-					<li key={f}>
-						<a href={f} target='blank'>
-							{f}
-						</a>
-					</li>
-				))}
-			</ul>
+		<div className='mx-auto h-screen w-screen bg-slate-200 pt-10'>
+			<h2 className='text-center text-xl font-mono'>Favorites repositories:</h2>
+			<div className='flex justify-center pt-5'>
+				<ul className='list-none'>
+					{favorites.map(f => (
+						<li
+							key={f}
+							className='p-3 hover:rounded-lg hover:text-white transition-all rounded-lg cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900'
+						>
+							<a href={f} target='blank'>
+								{f}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }

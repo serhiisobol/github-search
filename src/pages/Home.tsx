@@ -42,7 +42,7 @@ export function Home() {
 							<li
 								key={user.id}
 								onClick={() => clickHandler(user.login)}
-								className='p-3 hover:rounded-lg hover:text-white transition-all cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900'
+								className='p-3 hover:rounded-lg hover:text-white transition-all rounded-lg cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900'
 							>
 								{user.login}
 							</li>
