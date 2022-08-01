@@ -33,23 +33,23 @@ export function Home() {
         <p className="text-center text-red-600">Something went wrong...</p>
       )}
 
-      <div className="relative w-[560px]">
+      <div className="relative w-1/2">
         <input
           type="text"
-          className="border py-2 px-4 w-full h-[42px] mb-2 rounded-sm"
-          placeholder="Search for Github username..."
+          className="font-mono bg-slate-150 border p-7 w-full h-[50px] mb-2 rounded-full text-lg text-slate-800 enabled:hover:border-slate-800"
+          placeholder="Search for GitHub username..."
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
 
         {dropdown && (
-          <ul className="absolute list-none top-[42px] left-0 right-0 max-h-[200px] overflow-y-scroll shadow-lg bg-indigo-50 rounded-sm">
+          <ul className="absolute list-none top-[100px] left-0 right-0 shadow-lg bg-slate-100 rounded-lg">
             {isLoading && <p className="text-center">Loading...</p>}
             {data?.map((user) => (
               <li
                 key={user.id}
                 onClick={() => clickHandler(user.login)}
-                className="py-2 px-4 hover:bg-gray-500 hover:text-white transition-text-colors cursor-pointer"
+                className="p-3 hover:rounded-lg hover:text-white transition-text-colors cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900"
               >
                 {user.login}
               </li>
@@ -57,7 +57,7 @@ export function Home() {
           </ul>
         )}
 
-        <div className="container">
+        <div className="absolute top-[100px] left-0 right-0">
           {areReposLoading && (
             <p className="text-center">Repos are loading...</p>
           )}

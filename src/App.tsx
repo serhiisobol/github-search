@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import { Navigation } from "./components/Navigation";
-import { FavoritesPage } from "./pages/FavoritesPage";
+import { Header } from "./components/Header";
+import { FavoritesRepositories } from "./pages/FavoritesRepositories";
 import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <div className="overflow-hidden">
-      <Navigation />
+    <div className="overflow-hidden bg-slate-100">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/favorites" element={<FavoritesPage />}></Route>
+        <Route path="/favorites" element={<FavoritesRepositories />}></Route>
       </Routes>
     </div>
   );
