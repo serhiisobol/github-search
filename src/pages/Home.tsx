@@ -28,7 +28,7 @@ export function Home() {
   }, [debounced, data]);
 
   return (
-    <div className="flex justify-center pt-10 mx-auto h-screen w-screen">
+    <div className="flex justify-center my-10 over mx-auto h-screen w-screen overflow-auto">
       {isError && (
         <p className="text-center text-red-600">Something went wrong...</p>
       )}
@@ -41,25 +41,23 @@ export function Home() {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
-
         {dropdown && (
-          <ul className="absolute list-none top-[100px] left-0 right-0 shadow-lg bg-slate-100 rounded-lg">
+          <ul className="absolute list-none top-[100px] left-0 right-0 shadow-lg bg-slate-100 rounded-lg z-10">
             {isLoading && <p className="text-center">Loading...</p>}
             {data?.map((user) => (
               <li
                 key={user.id}
                 onClick={() => clickHandler(user.login)}
-                className="p-3 hover:rounded-lg hover:text-white transition-text-colors cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900"
+                className="p-3 hover:rounded-lg hover:text-white transition-all cursor-pointer shadow-lg hover:bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900"
               >
                 {user.login}
               </li>
             ))}
           </ul>
         )}
-
         <div className="absolute top-[100px] left-0 right-0">
           {areReposLoading && (
-            <p className="text-center">Repos are loading...</p>
+            <p className="text-center">Repositories are loading...</p>
           )}
           {repos?.map((repo) => (
             <RepoCard repo={repo} key={repo.id} />
