@@ -5,13 +5,13 @@ import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/favorites" element={<FavoritesPage />}></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
