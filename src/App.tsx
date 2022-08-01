@@ -1,5 +1,18 @@
+import { Route, Routes } from "react-router-dom";
+import { Navigation } from "./components/Navigation";
+import { FavoritesPage } from "./pages/FavoritesPage";
+import { Home } from "./pages/Home";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline p-4 text-center">Happy hacking!</h1>;
+  return (
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/favorites" element={<FavoritesPage />}></Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;
