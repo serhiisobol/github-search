@@ -8,7 +8,13 @@
 ## Install
 
 ```sh
-npm install
+yarn install
+```
+
+## Run application
+
+```sh
+yarn start:local
 ```
 
 ## Author
