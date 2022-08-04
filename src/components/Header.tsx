@@ -5,7 +5,7 @@ export function Header() {
 	const { favorites } = useAppSelector(state => state.github);
 
 	return (
-		<nav className='flex justify-between items-center h-[80px] p-10 shadow-lg shadow-slate-600/40 text-white bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900'>
+		<nav className='z-20 fixed top-0 left-0 right-0 flex justify-between items-center h-[80px] p-10 shadow-lg shadow-slate-600/40 text-white bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900'>
 			<h2 className='text-2xl font-bold'>
 				<i className='fa-brands fa-github mr-3'></i>
 				GitHub Search
