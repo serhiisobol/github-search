@@ -24,7 +24,7 @@ export function Home() {
 	}, [debounced, data]);
 
 	return (
-		<div className='flex justify-center my-10 over mx-auto h-screen w-screen overflow-auto'>
+		<div className='flex relative justify-center py-28 mx-auto h-screen w-screen overflow-auto'>
 			<div className='relative w-1/2'>
 				{isError ? (
 					<>
