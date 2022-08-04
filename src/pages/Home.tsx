@@ -50,7 +50,15 @@ export function Home() {
 					</ul>
 				)}
 				<div className='absolute top-[100px] left-0 right-0'>
-					{areReposLoading && <p className='text-center'>Repositories are loading...</p>}
+					{areReposLoading && (
+						<p className='text-slate-800 font-mono text-lg text-center animate-pulse bg-slate-100'>Repositories are loading...</p>
+					)}
+					{repos?.length === 0 && (
+						<p className='text-slate-800 font-mono text-lg text-center animate-pulse bg-slate-100'>No repositories yet.</p>
+					)}
+					{repos?.length !== 0 && repos?.[0].owner.avatar_url && (
+						<img src={repos?.[0].owner.avatar_url} className='rounded-full mb-10 m-auto h-[200px] w-[200px]' alt='owner_avatar' />
+					)}
 					{repos?.map(repo => (
 						<RepoCard repo={repo} key={repo.id} />
 					))}

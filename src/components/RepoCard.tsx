@@ -27,9 +27,21 @@ export function RepoCard({ repo }: { repo: IRepo }) {
 			<a href={repo.html_url} target='blank'>
 				<h2 className='text-lg font-bold mb-1'>{repo.full_name}</h2>
 				<p className='text-sm mb-1'>
-					Language: <span className='font-bold mr-2'>{repo.language}</span>
-					Forks: <span className='font-bold mr-2'>{repo.forks}</span>
-					Watchers: <span className='font-bold'>{repo.watchers}</span>
+					{repo.language && (
+						<>
+							Language: <span className='font-bold mr-2'>{repo.language}</span>
+						</>
+					)}
+					{repo.forks !== 0 && (
+						<>
+							Forks: <span className='font-bold mr-2'>{repo.forks}</span>
+						</>
+					)}
+					{repo.watchers !== 0 && (
+						<>
+							Watchers: <span className='font-bold'>{repo.watchers}</span>
+						</>
+					)}
 				</p>
 				<p className='text-sm font-thin mb-4'>{repo.description}</p>
 				{isFavorite ? (
