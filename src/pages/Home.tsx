@@ -25,16 +25,30 @@ export function Home() {
 
 	return (
 		<div className='flex justify-center my-10 over mx-auto h-screen w-screen overflow-auto'>
-			{isError && <p className='text-center text-red-600'>Something went wrong...</p>}
-
 			<div className='relative w-1/2'>
-				<input
-					type='text'
-					className='font-mono bg-slate-150 border p-7 w-full h-[50px] mb-2 rounded-full text-lg text-slate-800 enabled:hover:border-slate-800'
-					placeholder='Search for GitHub username...'
-					value={search}
-					onChange={event => setSearch(event.target.value)}
-				/>
+				{isError ? (
+					<>
+						<input
+							type='text'
+							className='font-mono bg-slate-150 border p-7 w-full h-[50px] mb-2 rounded-full text-lg text-slate-800 enabled:hover:border-slate-800'
+							placeholder='Search for GitHub username...'
+							value={search}
+							onChange={event => setSearch(event.target.value)}
+						/>
+						<p className='text-red-600 pt-5 font-mono text-base text-center animate-pulse bg-slate-100'>
+							Loading failed. Please check your connection and try again later.
+						</p>
+					</>
+				) : (
+					<input
+						type='text'
+						className='font-mono bg-slate-150 border p-7 w-full h-[50px] mb-2 rounded-full text-lg text-slate-800 enabled:hover:border-slate-800'
+						placeholder='Search for GitHub username...'
+						value={search}
+						onChange={event => setSearch(event.target.value)}
+					/>
+				)}
+
 				{dropdown && (
 					<ul className='absolute list-none top-[100px] left-0 right-0 shadow-lg bg-slate-100 rounded-lg z-10'>
 						{isLoading && <p className='text-center'>Loading...</p>}
