@@ -11,9 +11,9 @@ export function FavoritesRepositories() {
 		);
 
 	return (
-		<div className='mx-auto h-screen w-screen bg-slate-200 pt-10'>
-			<h2 className='text-center text-xl font-mono'>Favorites repositories:</h2>
-			<div className='flex justify-center pt-5'>
+		<div className='mx-auto h-screen w-screen bg-slate-200 pt-10 overflow-auto'>
+			<h2 className='text-center text-xl font-mono pt-20'>Favorites repositories:</h2>
+			<div className='flex justify-center pt-5 mx-auto'>
 				<ul className='list-none'>
 					{favorites.map(f => (
 						<li
