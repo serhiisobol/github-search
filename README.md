@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Search for your favorite GitHub repository by username
+> Search GitHub repositories by username and add to your favorites
 
 ## Install
 
